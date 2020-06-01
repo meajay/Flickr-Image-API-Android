@@ -1,8 +1,10 @@
 package com.example.googleimages.presenter;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.example.googleimages.Constants;
+import com.example.googleimages.R;
 import com.example.googleimages.model.FlickerAPIResponse;
 import com.example.googleimages.network.ApiInterface;
 import com.example.googleimages.network.RetrofitClient;
@@ -37,9 +39,13 @@ public class SearchPresenter implements SearchPresenterContract {
                 searchViewContract.updateProgressbar(false);
                 if(response.code() == 200){
                     FlickerAPIResponse responsex = response.body();
-                    if(responsex!=null && responsex.getPhotos()!=null &&
-                            responsex.getPhotos().getPhotoList().size()>0) {
-                       searchViewContract.showQueryData(responsex.getPhotos());
+                    if(responsex!=null && responsex.getPhotos()!=null) {
+                        if (responsex.getPhotos().getPhotoList().size() > 0) {
+                            searchViewContract.showQueryData(responsex.getPhotos());
+                        }
+                        else{
+                            Toast.makeText(context, R.string.no_items_found,Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
             }
