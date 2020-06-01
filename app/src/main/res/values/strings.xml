@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Flicker Pics</string>
+    <string name="search">Search</string>
+    <string name="no_more_items">No more items to be displayed.</string>
+</resources>
