@@ -37,7 +37,7 @@ public class SearchActivity extends AppCompatActivity implements SearchViewContr
 
 
     private List<PhotoDetail> itemList = new ArrayList<>();
-    private String DEFAULT_SEARCH = "Google";
+    private String DEFAULT_SEARCH = "Mountain";
     private String query = "";
     private int pageFetched = 1;
     private int totalPages = Integer.MAX_VALUE;
