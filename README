@@ -1,12 +1,14 @@
-Following Project fetches images and data from https://www.googleapis.com/
+Following Project fetches images data from https://api.flickr.com/services/rest/
 
 1.Libraries used - Retrofit , Picasso , chuck , retrofit converter
 2.Architecture Used - MVP.
 
-Implementation - As per mentioned in project i need to create Three Activities one for seraching ,
-second is for displaying the results and third for detailed results.
+Implementation - Search bar is being used to search any query.As soon as you start search ,api call
+                 is created to fetch images corresponding to the query you have used.
 
-But in order to improve UI behaviour I merged two activities with one ie Searching and displaying in
-same activity.I used singleTop launch mode to do that.
+                 Pagination : 10 items are being fetched in one api call.As soon scroll is at last
+                              position ,we are fetching the items of next page.
 
-Improvements -  Architecture imrovemntents,UNIT Test cases , Pagination
+
+
+Improvements -  Architecture improvemntents,UNIT Test cases
